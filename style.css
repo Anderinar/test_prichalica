@@ -1,0 +1,78 @@
+/* Custom styles for the wavy background and specific layout needs */
+
+:root {
+    --brand-yellow: #fde047;
+    --brand-yellow-dark: #facc15;
+    --brand-dark: #181c24;
+    --brand-cream: #fffdf5;
+}
+
+/* Wavy Header effect */
+.wavy-bg {
+    position: relative;
+    background-color: var(--brand-yellow);
+}
+
+.wavy-bg::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--brand-yellow);
+    clip-path: ellipse(55% 50% at 50% 10%);
+    z-index: 1;
+}
+
+/* Ensure relative positioning for content inside wavy area */
+.wavy-bg > * {
+    position: relative;
+    z-index: 5;
+}
+
+/* Smooth transitions for interactive elements */
+body {
+    scroll-behavior: smooth;
+}
+
+/* FAQ Accordion active states */
+.faq-item.active .faq-trigger i {
+    transform: rotate(180deg);
+    opacity: 1;
+    color: var(--brand-dark);
+}
+
+.faq-item.active .faq-content {
+    height: auto;
+    margin-top: 0;
+}
+
+/* Custom rounded corners and shapes if needed */
+.rounded-giant {
+    border-radius: 4rem;
+}
+
+/* Animation classes */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation: fadeInSlideUp 0.8s ease forwards;
+}
+
+@media (max-width: 640px) {
+    .wavy-bg::after {
+        clip-path: ellipse(80% 50% at 50% 10%);
+        bottom: -30px;
+        height: 60px;
+    }
+}
