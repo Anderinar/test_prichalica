@@ -1,470 +1,292 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricalica — Школа сербского языка</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pricalica - школа сербского языка для взрослых, детей и бизнеса.">
+  <title>Pricalica - школа сербского языка</title>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            yellow: '#fde047',
-                            'yellow-dark': '#facc15',
-                            dark: '#181c24',
-                            cream: '#fffdf5',
-                        }
-                    }
-                }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Circe', 'Arial', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            prica: {
+              yellow: '#FFE866',
+              ink: '#24252D',
+              muted: '#85838A',
+              cream: '#FFF8EF',
+              panel: '#F7F8FC'
             }
+          },
+          boxShadow: {
+            soft: '0 18px 45px rgba(36, 37, 45, 0.08)'
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </head>
-<body class="bg-brand-cream text-brand-dark antialiased font-sans">
 
-    <!-- HEADER & HERO SECTION -->
-    <section class="wavy-bg pt-6 pb-24 overflow-hidden relative">
-        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between mb-20 relative z-10">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 flex items-center justify-center">
-                    <svg viewBox="0 0 40 40" class="w-full h-full text-brand-dark fill-current">
-                        <path d="M20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0ZM20 12C22.2091 12 24 13.7909 24 16C24 18.2091 22.2091 20 20 20C17.7909 20 16 18.2091 16 16C16 13.7909 17.7909 12 20 12ZM20 22C24.4183 22 28 25.5817 28 30H12C12 25.5817 15.5817 22 20 22Z" />
-                    </svg>
-                </div>
-                <span class="font-display font-extrabold text-xl tracking-tighter uppercase">Pricalica</span>
-            </div>
-            
-            <nav class="hidden lg:flex items-center gap-6">
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">О школе</a>
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">Уроки в школе</a>
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">Онлайн-школа</a>
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">Детская школа</a>
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">Для бизнеса</a>
-                <a href="#" class="text-[11px] font-medium uppercase tracking-wider text-brand-dark/80 hover:text-brand-dark transition-colors">Разговорный клуб</a>
-            </nav>
+<body class="bg-white font-sans text-prica-ink antialiased">
+  <!-- Header -->
+  <header class="fixed left-0 top-0 z-50 w-full bg-white/95 backdrop-blur">
+    <div class="mx-auto flex h-20 max-w-[1224px] items-center justify-between px-5 sm:px-8">
+      <a href="#top" class="flex items-center gap-2" aria-label="Pricalica">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="text-[13px] font-black tracking-[0.08em]">pricalica</span>
+      </a>
 
-            <div class="lg:hidden">
-                <button id="mobile-menu-btn" class="p-2 bg-brand-dark/10 rounded-full">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </header>
+      <nav class="hidden items-center gap-9 text-[15px] font-semibold lg:flex">
+        <a href="#about" class="nav-link">О школе</a>
+        <a href="#formats" class="nav-link">Уроки в школе</a>
+        <a href="#formats" class="nav-link">Онлайн-школа</a>
+        <a href="#formats" class="nav-link">Детская школа</a>
+        <a href="#business" class="nav-link">Для бизнеса</a>
+        <a href="#club" class="nav-link">Разговорный клуб</a>
+      </nav>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl mx-auto leading-[1.05] font-display font-bold">
-                Сербский без стресса в онлайн-школе Pricalica
-            </h1>
-            <p class="text-lg md:text-xl font-light text-brand-dark/70 mb-10 max-w-2xl mx-auto italic lowercase">
-                для тех, кто хочет понимать, говорить и увереннее чувствовать себя каждый день
-            </p>
-            <button class="bg-brand-dark text-white px-10 py-5 rounded-full text-sm font-semibold hover:bg-black transition-all shadow-xl shadow-brand-dark/20 uppercase tracking-widest">
-                Записаться на бесплатный урок
-            </button>
-        </div>
+      <button id="menuButton" class="grid h-11 w-11 place-items-center rounded-full bg-prica-panel lg:hidden" aria-label="Открыть меню" aria-expanded="false">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu mx-5 hidden rounded-3xl bg-white p-5 shadow-soft lg:hidden">
+      <a href="#about">О школе</a>
+      <a href="#formats">Форматы обучения</a>
+      <a href="#teachers">Преподаватели</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero-wave pb-28 pt-36 sm:pb-32 lg:pb-36 lg:pt-44">
+      <div class="mx-auto max-w-[980px] px-5 text-center">
+        <h1 class="mx-auto max-w-[760px] text-[38px] font-black leading-[1.08] tracking-normal sm:text-6xl lg:text-[68px]">
+          Сербский без стресса в онлайн-школе Pricalica
+        </h1>
+        <p class="mx-auto mt-7 max-w-[600px] text-xl font-semibold leading-snug text-prica-ink/65 sm:text-[26px]">
+          для тех, кто хочет понимать, говорить и увереннее чувствовать себя каждый день
+        </p>
+        <a href="#lead" class="btn-dark mt-11 inline-flex">Записаться на бесплатный урок</a>
+      </div>
     </section>
 
-    <!-- LEARNING FORMATS SECTION -->
-    <section class="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <h2 class="text-3xl md:text-5xl text-center mb-20 font-display font-bold">Форматы обучения</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Format 1 -->
-            <div class="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm border border-brand-dark/5 hover:-translate-y-2 transition-transform h-full">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl bg-brand-cream/50 relative">
-                    <img src="https://images.unsplash.com/photo-1523050853064-9524589d67ba?auto=format&fit=crop&q=80&w=800" alt="Курсы" class="w-full h-full object-cover mix-blend-multiply opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i data-lucide="users" class="w-16 h-16"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Курсы в школе</h3>
-                <p class="text-sm font-semibold mb-3 text-brand-dark/60">от 1000 динар</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light">
-                    учим говорить уверенно — в небольших группах, с живой практикой и понятной подачей
-                </p>
-            </div>
+    <!-- Features -->
+    <section id="formats" class="mx-auto max-w-[1224px] px-5 pb-16 pt-24 sm:px-8 lg:pt-28">
+      <h2 class="section-title">Форматы обучения</h2>
 
-            <!-- Format 2 -->
-            <div class="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm border border-brand-dark/5 hover:-translate-y-2 transition-transform h-full">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl bg-brand-cream/50 relative">
-                    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&q=80&w=800" alt="Онлайн" class="w-full h-full object-cover mix-blend-multiply opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i data-lucide="globe" class="w-16 h-16"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Онлайн школа</h3>
-                <p class="text-sm font-semibold mb-3 text-brand-dark/60">от 1000 динар</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light">
-                    занимайтесь из любой точки мира — в удобном формате и с акцентом на реальную речь
-                </p>
-            </div>
+      <div class="mt-11 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="format-card">
+          <div class="illustration illustration-board"><i data-lucide="presentation"></i></div>
+          <h3>Курсы в школе</h3>
+          <p class="price">от 1000 динар</p>
+          <p>учим говорить уверенно - в небольших группах, с живой практикой и понятной подачей</p>
+        </article>
 
-            <!-- Format 3 -->
-            <div class="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm border border-brand-dark/5 hover:-translate-y-2 transition-transform h-full">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl bg-brand-cream/50 relative">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Бизнес" class="w-full h-full object-cover mix-blend-multiply opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i data-lucide="briefcase" class="w-16 h-16"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Для бизнеса</h3>
-                <p class="text-sm font-semibold mb-3 text-brand-dark/60">от 1000 динар</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light">
-                    сербский для работы, переговоров и уверенного общения с коллегами, клиентами и партнёрами
-                </p>
-            </div>
-        </div>
+        <article class="format-card">
+          <div class="illustration illustration-online"><i data-lucide="monitor-play"></i></div>
+          <h3>Онлайн школа</h3>
+          <p class="price">от 1000 динар</p>
+          <p>занимайтесь из любой точки мира - в удобном формате и с акцентом на реальную речь</p>
+        </article>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 lg:max-w-[750px] mx-auto">
-            <!-- Format 4 -->
-            <div class="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm border border-brand-dark/5 hover:-translate-y-2 transition-transform h-full">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl bg-brand-cream/50 relative">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="Клубы" class="w-full h-full object-cover mix-blend-multiply opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i data-lucide="message-square" class="w-16 h-16"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Разговорные клубы</h3>
-                <p class="text-sm font-semibold mb-3 text-brand-dark/60">от 1000 динар</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light">
-                    больше живого общения, реальных ситуаций и практики, которая помогает быстрее разговориться
-                </p>
-            </div>
+        <article id="business" class="format-card">
+          <div class="illustration illustration-business"><i data-lucide="briefcase-business"></i></div>
+          <h3>Для бизнеса</h3>
+          <p class="price">от 1000 динар</p>
+          <p>сербский для работы, переговоров и уверенного общения с коллегами, клиентами и партнерами</p>
+        </article>
 
-            <!-- Format 5 -->
-            <div class="bg-white p-8 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm border border-brand-dark/5 hover:-translate-y-2 transition-transform h-full">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-2xl bg-brand-cream/50 relative">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Дети" class="w-full h-full object-cover mix-blend-multiply opacity-80">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                        <i data-lucide="sparkles" class="w-16 h-16"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Детская школа</h3>
-                <p class="text-sm font-semibold mb-3 text-brand-dark/60">от 1000 динар</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light">
-                    мягкие и увлекательные занятия для детей — через интерес, игру и естественное погружение в язык
-                </p>
-            </div>
-        </div>
+        <article id="club" class="format-card sm:col-span-2 lg:col-span-3 lg:grid lg:grid-cols-[1.2fr_1fr] lg:items-center">
+          <div class="illustration illustration-club"><i data-lucide="messages-square"></i></div>
+          <div>
+            <h3>Разговорные клубы и мастер классы</h3>
+            <p class="price">от 1000 динар</p>
+            <p>больше живого общения, реальных ситуаций и практики, которая помогает быстрее разговориться</p>
+          </div>
+        </article>
+
+        <article class="format-card sm:col-span-2 lg:col-span-3 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center">
+          <div class="illustration illustration-kids lg:order-2"><i data-lucide="blocks"></i></div>
+          <div>
+            <h3>Детская школа</h3>
+            <p class="price">от 1000 динар</p>
+            <p>мягкие и увлекательные занятия для детей - через интерес, игру и естественное погружение в язык</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- SIGNUP CTA -->
-    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-brand-yellow rounded-[3rem] p-10 md:p-20 flex flex-col lg:flex-row items-center gap-16 overflow-hidden relative">
-            <div class="w-full lg:w-1/2 relative z-10">
-                <h2 class="text-3xl md:text-5xl mb-4 font-display font-bold">Запишитесь на бесплатный урок</h2>
-                <p class="text-brand-dark/60 mb-10 font-light">На вводном уроке фокусируемся на учёбе, а не продаём курс</p>
-                <div class="max-w-md hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1520923642038-b4259ace9439?auto=format&fit=crop&q=80&w=800" alt="Contact" class="w-full h-auto rounded-[2rem] mix-blend-multiply opacity-40">
-                </div>
-            </div>
-            <div class="w-full lg:w-1/2 relative z-10">
-                <form id="lead-form" class="space-y-4 max-w-md mx-auto lg:mx-0">
-                    <input type="text" placeholder="Имя" class="w-full p-4 rounded-xl bg-white border-2 border-transparent focus:border-brand-dark transition-all outline-none text-sm shadow-sm" required>
-                    <input type="tel" placeholder="Телефон" class="w-full p-4 rounded-xl bg-white border-2 border-transparent focus:border-brand-dark transition-all outline-none text-sm shadow-sm" required>
-                    <input type="text" placeholder="Ссылка на мессенджер" class="w-full p-4 rounded-xl bg-white border-2 border-transparent focus:border-brand-dark transition-all outline-none text-sm shadow-sm">
-                    <button type="submit" class="w-full bg-brand-dark text-white p-5 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-black transition-all mt-4 active:scale-95">
-                        Отправить заявку
-                    </button>
-                </form>
-            </div>
+    <section id="lead" class="mx-auto max-w-[1224px] px-5 py-12 sm:px-8">
+      <div class="lead-panel grid gap-10 bg-prica-yellow p-6 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:p-12">
+        <div>
+          <h2 class="max-w-[590px] text-3xl font-black leading-tight sm:text-4xl">Запишитесь на бесплатный урок</h2>
+          <p class="mt-4 text-lg font-semibold text-prica-ink/70 sm:text-xl">На вводном уроке фокусируемся на учебе, а не продаем курс</p>
+          <div class="phone-illustration mt-8" aria-hidden="true"></div>
         </div>
+
+        <form id="leadForm" class="grid content-center gap-4">
+          <input type="text" name="name" placeholder="Имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+          <input type="text" name="messenger" placeholder="Ссылка на мессенджер">
+          <button class="btn-dark w-full" type="submit">Записаться</button>
+          <p id="formStatus" class="min-h-6 text-center text-sm font-bold text-prica-ink/70" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
 
-    <!-- TEACHERS SECTION -->
-    <section class="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between mb-20">
-            <h2 class="text-3xl md:text-5xl font-display font-bold">Наши преподаватели</h2>
-            <div class="flex gap-4">
-                <button class="p-3 bg-brand-dark/5 rounded-full hover:bg-brand-dark/10 transition-colors">
-                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                </button>
-                <button class="p-3 bg-brand-dark text-white rounded-full hover:bg-black transition-colors shadow-lg shadow-brand-dark/10">
-                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                </button>
-            </div>
+    <section id="teachers" class="overflow-hidden py-16">
+      <div class="mx-auto flex max-w-[1224px] items-center justify-between px-5 sm:px-8">
+        <h2 class="section-title mb-0 flex-1">Наши преподаватели</h2>
+        <div class="hidden gap-3 sm:flex">
+          <button class="slider-btn" data-scroll="teachersTrack" data-direction="-1" aria-label="Назад"><i data-lucide="chevron-left"></i></button>
+          <button class="slider-btn slider-btn-dark" data-scroll="teachersTrack" data-direction="1" aria-label="Вперед"><i data-lucide="chevron-right"></i></button>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Teacher 1 -->
-            <div class="flex flex-col items-center text-center group">
-                <div class="w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 mb-6 relative">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" alt="Milena" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Milena Lazić</h3>
-                <p class="text-xs text-brand-dark/40 mb-3 px-4 leading-relaxed italic uppercase tracking-wider font-semibold">Основатель, преподаватель</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light px-2">
-                    Учит через вдохновение и искреннюю вовлечённость. Развивает навыки, уверенность и любовь к сербскому языку.
-                </p>
-            </div>
+      </div>
 
-            <!-- Teacher 2 -->
-            <div class="flex flex-col items-center text-center group">
-                <div class="w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 mb-6 relative">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" alt="Dunja" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Dunja Vujačić</h3>
-                <p class="text-xs text-brand-dark/40 mb-3 px-4 leading-relaxed italic uppercase tracking-wider font-semibold">Профессиональный филолог</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light px-2">
-                    Более 15 лет помогает освоить сербский через практику общения и естественное погружение в культуру.
-                </p>
-            </div>
-
-            <!-- Teacher 3 -->
-            <div class="flex flex-col items-center text-center group">
-                <div class="w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-gray-100 mb-6 relative">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800" alt="Branka" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
-                </div>
-                <h3 class="text-xl mb-1 font-display font-bold">Branka Karagić</h3>
-                <p class="text-xs text-brand-dark/40 mb-3 px-4 leading-relaxed italic uppercase tracking-wider font-semibold">Эксперт по коммуникации</p>
-                <p class="text-[14px] text-brand-dark/50 leading-relaxed font-light px-2">
-                    Создает атмосферу доверия. Помогает быстро преодолеть языковой барьер и заговорить уже на первом уроке.
-                </p>
-            </div>
-        </div>
+      <div id="teachersTrack" class="scroll-row mx-auto mt-10 max-w-[1224px] px-5 sm:px-8">
+        <article class="teacher-card">
+          <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=900&q=80" alt="Milena Lazić">
+          <h3>Milena Lazić</h3>
+          <p>Преподаватель, который учит через вдохновение, креативность и искреннюю вовлеченность</p>
+        </article>
+        <article class="teacher-card">
+          <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?auto=format&fit=crop&w=900&q=80" alt="Dunja Vujačić">
+          <h3>Dunja Vujačić</h3>
+          <p>Проводит креативные интерактивные занятия для детей и взрослых, развивая навыки и уверенность</p>
+        </article>
+        <article class="teacher-card">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Branka Karagić">
+          <h3>Branka Karagić</h3>
+          <p>Более 15 лет помогает освоить сербский через практику общения и уверенную речь</p>
+        </article>
+      </div>
     </section>
 
-    <!-- QUIZ BANNER -->
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="bg-brand-yellow rounded-[2.5rem] py-20 px-8 text-center flex flex-col items-center relative overflow-hidden">
-                <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
-                <h2 class="text-3xl md:text-5xl mb-4 font-display font-bold relative z-10">Сможешь ли ты общаться на сербском?</h2>
-                <p class="text-brand-dark/60 mb-10 font-light italic relative z-10">6 реальных ситуаций — проверь себя за 2 минуты</p>
-                <button class="bg-brand-dark text-white px-12 py-5 rounded-full text-sm font-semibold hover:bg-black transition-all relative z-10 uppercase tracking-widest shadow-lg shadow-black/10">
-                    Начать тест
-                </button>
-            </div>
-        </div>
+    <section class="mx-auto max-w-[1224px] px-5 py-12 sm:px-8">
+      <div class="rounded-[24px] bg-prica-yellow px-6 py-20 text-center sm:py-24">
+        <h2 class="text-3xl font-black leading-tight sm:text-4xl">Сможешь ли ты общаться на сербском?</h2>
+        <p class="mt-4 text-lg font-semibold text-prica-ink/65">6 реальных ситуаций - проверь себя за 2 минуты</p>
+        <button class="btn-dark mt-11 min-w-[min(450px,100%)]">Начать тест</button>
+      </div>
     </section>
 
-    <!-- PHOTO GALLERY SECTION -->
-    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-5xl text-center mb-16 font-display font-bold">Приходи в гости</h2>
-        <div class="w-full aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl relative">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" alt="Interior" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-brand-dark/10 pointer-events-none"></div>
-        </div>
+    <section id="about" class="mx-auto max-w-[1224px] px-5 py-16 sm:px-8">
+      <h2 class="section-title">Приходи в гости</h2>
+      <img class="visit-image mt-10" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85" alt="Светлая учебная аудитория школы">
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="flex items-center justify-between mb-20">
-            <h2 class="text-3xl md:text-5xl font-display font-bold">Вот что о нас говорят</h2>
-            <div class="flex gap-4">
-                <button class="p-3 bg-brand-dark/5 rounded-full hover:bg-brand-dark/10 transition-colors">
-                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                </button>
-                <button class="p-3 bg-brand-dark text-white rounded-full shadow-lg">
-                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                </button>
-            </div>
+    <section id="reviews" class="overflow-hidden py-10">
+      <div class="mx-auto flex max-w-[1224px] items-center justify-between px-5 sm:px-8">
+        <h2 class="section-title mb-0 flex-1">Вот что о нас говорят</h2>
+        <div class="hidden gap-3 sm:flex">
+          <button class="slider-btn" data-scroll="reviewsTrack" data-direction="-1" aria-label="Назад"><i data-lucide="chevron-left"></i></button>
+          <button class="slider-btn slider-btn-dark" data-scroll="reviewsTrack" data-direction="1" aria-label="Вперед"><i data-lucide="chevron-right"></i></button>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Google Rating Card -->
-            <div class="bg-white p-8 rounded-[2rem] flex flex-col items-center justify-center text-center shadow-sm">
-                <p class="text-sm font-medium mb-2 opacity-50 capitalize">Мы в Google Maps</p>
-                <p class="text-5xl font-display font-black mb-4">5.0</p>
-                <div class="flex gap-1 mb-8">
-                    <i data-lucide="star" class="w-4 h-4 fill-[#F9D423] text-[#F9D423]"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-[#F9D423] text-[#F9D423]"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-[#F9D423] text-[#F9D423]"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-[#F9D423] text-[#F9D423]"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-[#F9D423] text-[#F9D423]"></i>
-                </div>
-                <div class="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282020%29.svg" alt="Gmaps" class="w-10 h-10">
-                </div>
-            </div>
+      </div>
 
-            <!-- Review 1 -->
-            <div class="bg-white p-8 rounded-[2rem] flex flex-col justify-between shadow-sm">
-                <div>
-                    <h4 class="font-display font-bold mb-4">Ksu Luk</h4>
-                    <p class="text-[14px] text-brand-dark/60 leading-relaxed font-light italic">
-                        "Замечательная школа! Учу сербский с ними уже третий год. К каждому всегда готовы ответить на любой вопрос, помочь преодолеть тяжёлые темы."
-                    </p>
-                </div>
-                <div class="pt-6 border-t border-brand-dark/5 mt-6">
-                    <div class="flex gap-1">
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 2 -->
-            <div class="bg-white p-8 rounded-[2rem] flex flex-col justify-between shadow-sm">
-                <div>
-                    <h4 class="font-display font-bold mb-4">Марина Седнева</h4>
-                    <p class="text-[14px] text-brand-dark/60 leading-relaxed font-light italic">
-                        "Хожу уже пять месяцев на курс, нравится темп — не утомительный, без выгорания. Очень классные языковые марафоны!"
-                    </p>
-                </div>
-                <div class="pt-6 border-t border-brand-dark/5 mt-6">
-                    <div class="flex gap-1">
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="bg-white p-8 rounded-[2rem] flex flex-col justify-between shadow-sm">
-                <div>
-                    <h4 class="font-display font-bold mb-4">Alena Simancho</h4>
-                    <p class="text-[14px] text-brand-dark/60 leading-relaxed font-light italic">
-                        "Чудесная школа! Я занимаюсь в ней уже больше года, очень довольна. Преподаватели поддерживают и помогают пройти через все трудности."
-                    </p>
-                </div>
-                <div class="pt-6 border-t border-brand-dark/5 mt-6">
-                    <div class="flex gap-1">
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                        <i data-lucide="star" class="w-3 h-3 fill-brand-dark/40 text-brand-dark/40"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div id="reviewsTrack" class="scroll-row mx-auto mt-10 max-w-[1224px] px-5 sm:px-8">
+        <article class="rating-card">
+          <span>Мы в<br>Google Maps</span>
+          <strong>5.5</strong>
+          <div class="maps-shape"></div>
+        </article>
+        <article class="review-card">
+          <h3>Ksu Luk</h3>
+          <p>Замечательная школа, с прекрасными преподавателями. К каждому ученику индивидуальный подход, всегда готовы ответить на любой вопрос и помочь преодолеть трудные темы.</p>
+        </article>
+        <article class="review-card">
+          <h3>Марина Седнева</h3>
+          <p>Хожу уже пять месяцев на курс, нравится темп, не утомительный, без выгорания и без желания бросить. Очень классные языковые марафоны.</p>
+        </article>
+        <article class="review-card">
+          <h3>Alena Simancho</h3>
+          <p>Чудесная школа. Занимаюсь больше года, очень довольна. Преподаватели поддерживают, а атмосфера помогает говорить смелее.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="py-32 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-5xl text-center mb-20 font-display font-bold">Часто задаваемые вопросы</h2>
-        <div class="flex flex-col space-y-2">
-            <!-- Accordion items will be enhanced by JS -->
-            <div class="faq-item border-b border-brand-dark/5">
-                <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
-                    <span class="text-lg font-medium text-brand-dark/80 group-hover:text-brand-dark transition-colors">Что требуется для занятий?</span>
-                    <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 transition-transform duration-300"></i>
-                </button>
-                <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                    <div class="pb-6 text-[15px] text-brand-dark/50 leading-relaxed font-light">
-                        Для наших курсов сербского языка вам понадобится только компьютер или смартфон, стабильный интернет и желание учиться. Все учебные материалы мы предоставляем в электронном виде бесплатно.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item border-b border-brand-dark/5">
-                <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
-                    <span class="text-lg font-medium text-brand-dark/80 group-hover:text-brand-dark transition-colors">Можно ли учиться онлайн?</span>
-                    <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 transition-transform duration-300"></i>
-                </button>
-                <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                    <div class="pb-6 text-[15px] text-brand-dark/50 leading-relaxed font-light">
-                        Да, у нас есть полноценная онлайн-платформа и групповые занятия в Zoom для тех, кто находится не в Нови Саде или предпочитает дистанционный формат.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item border-b border-brand-dark/5">
-                <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
-                    <span class="text-lg font-medium text-brand-dark/80 group-hover:text-brand-dark transition-colors">Сколько длится один урок?</span>
-                    <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 transition-transform duration-300"></i>
-                </button>
-                <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                    <div class="pb-6 text-[15px] text-brand-dark/50 leading-relaxed font-light">
-                        Стандартно занятие в группе длится 60 или 90 минут, в зависимости от выбранного курса. Индивидуальные уроки могут быть скорректированы под ваш запрос.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item border-b border-brand-dark/5">
-                <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
-                    <span class="text-lg font-medium text-brand-dark/80 group-hover:text-brand-dark transition-colors">Есть ли пробное занятие?</span>
-                    <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 transition-transform duration-300"></i>
-                </button>
-                <div class="faq-content h-0 overflow-hidden transition-all duration-300">
-                    <div class="pb-6 text-[15px] text-brand-dark/50 leading-relaxed font-light">
-                        Первое вводное занятие у нас всегда бесплатное. Оно длится около 30 минут: мы знакомимся, определяем ваш уровень и подбираем подходящую группу.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="faq" class="mx-auto max-w-[1224px] px-5 py-16 sm:px-8">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <div class="mt-10 space-y-4">
+        <article class="faq-item">
+          <button class="faq-question">Что требуется для занятий по сербскому?<i data-lucide="chevron-down"></i></button>
+          <div class="faq-answer">Для занятий по сербскому нужен только телефон или ноутбук, стабильный интернет и желание практиковаться. Материалы мы подбираем под ваш уровень.</div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question">Можно ли учиться онлайн?<i data-lucide="chevron-down"></i></button>
+          <div class="faq-answer">Да, можно заниматься из любой страны. Онлайн-уроки проходят в живом формате с разговорной практикой и обратной связью.</div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question">Сколько длится урок и как часто они проходят?<i data-lucide="chevron-down"></i></button>
+          <div class="faq-answer">Обычно урок длится 60 или 90 минут. Частоту занятий обсуждаем на вводной встрече, чтобы график был комфортным.</div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question">Можно ли прийти на пробный урок?<i data-lucide="chevron-down"></i></button>
+          <div class="faq-answer">Да, первый урок бесплатный. На нем знакомимся, определяем уровень и выбираем подходящий формат обучения.</div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question">Вы готовите к экзаменам по сербскому?<i data-lucide="chevron-down"></i></button>
+          <div class="faq-answer">Да, готовим к экзаменам и собеседованиям, уделяя внимание грамматике, аудированию и уверенной устной речи.</div>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark text-white rounded-t-[4rem] pt-24 pb-12 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mb-24">
-            <div>
-                <h5 class="uppercase text-[10px] tracking-[0.3em] text-white/30 mb-8 font-black">Разделы сайта</h5>
-                <ul class="space-y-4 text-[14px] font-light text-white/50">
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">О школе</a></li>
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">Уроки в школе</a></li>
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">Онлайн-школа</a></li>
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">Детская школа</a></li>
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">Для бизнеса</a></li>
-                    <li><a href="#" class="hover:text-brand-yellow transition-colors italic">Разговорный клуб</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="uppercase text-[10px] tracking-[0.3em] text-white/30 mb-8 font-black">Контакты</h5>
-                <div class="space-y-6 text-[14px] font-light text-white/60">
-                    <a href="mailto:pricalica.skola@gmail.com" class="block hover:text-white transition-colors">pricalica.skola@gmail.com</a>
-                    <a href="tel:+38163591259" class="block hover:text-white transition-colors">+381 63 591 259</a>
-                    
-                    <h5 class="uppercase text-[10px] tracking-[0.2em] text-white/20 pt-4 font-bold">Мы в сети</h5>
-                    <div class="flex gap-4">
-                        <a href="#" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-transform active:scale-90"><i data-lucide="send" class="w-5 h-5"></i></a>
-                        <a href="#" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-transform active:scale-90"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                        <a href="#" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-transform active:scale-90"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:bg-white/[0.03] lg:p-10 lg:rounded-[2.5rem] lg:border lg:border-white/5">
-                <h4 class="font-display font-bold text-lg mb-6 leading-tight">
-                    Milena Dimitrijević Lazić PR Edukativni centar Verba MDL Novi Sad
-                </h4>
-                <div class="text-[10px] text-white/30 space-y-2 uppercase tracking-widest font-medium">
-                    <p>Правна форма Предузетник</p>
-                    <p>Матични број 68177642</p>
-                    <p>Датум оснивања 08.08.2023</p>
-                    <div class="flex gap-8 pt-4">
-                        <div>
-                            <p class="text-white/10 mb-1">МБ</p>
-                            <p class="text-white/40">68177642</p>
-                        </div>
-                        <div>
-                            <p class="text-white/10 mb-1">ПИБ</p>
-                            <p class="text-white/40">115200527</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[11px] text-white/10 uppercase tracking-[0.2em]">
-           <div class="flex items-center gap-2 mb-4 md:mb-0">
-             <i data-lucide="map-pin" class="w-3 h-3"></i>
-             <span>Нови Сад, Србија</span>
-           </div>
-           <p>© 2024 Pricalica — Школа сербского языка</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-prica-ink py-10 text-white">
+    <div class="mx-auto grid max-w-[1224px] gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr_1.3fr]">
+      <div>
+        <h2 class="footer-title">О нас</h2>
+        <ul class="mt-4 space-y-3 text-white/70">
+          <li><a href="#about">О школе</a></li>
+          <li><a href="#formats">Уроки в школе</a></li>
+          <li><a href="#formats">Онлайн-школа</a></li>
+          <li><a href="#formats">Детская школа</a></li>
+          <li><a href="#business">Для бизнеса</a></li>
+          <li><a href="#club">Разговорный клуб</a></li>
+        </ul>
+      </div>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+      <div>
+        <h2 class="footer-title">Контакты</h2>
+        <div class="mt-4 flex flex-wrap gap-x-8 gap-y-3 font-bold text-white/75">
+          <a href="mailto:pricalica.skola@gmail.com">pricalica.skola@gmail.com</a>
+          <a href="tel:+38163591259">+381 63 591 259</a>
+        </div>
+        <h2 class="footer-title mt-8">Социальные сети</h2>
+        <div class="mt-4 flex gap-3">
+          <a class="social-link" href="#" aria-label="Telegram"><i data-lucide="send"></i></a>
+          <a class="social-link" href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+          <a class="social-link" href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        </div>
+        <h2 class="footer-title mt-8">Адрес</h2>
+        <p class="mt-4 font-bold text-white/70">Др Светислава Касапиновића 38, Novi Sad</p>
+      </div>
+
+      <div class="rounded-[18px] bg-white/25 p-6">
+        <h2 class="text-xl font-black leading-tight">Milena Dimitrijević Lazić PR Edukativni centar Verba MDL Novi Sad</h2>
+        <p class="mt-5 text-white/70">Правна форма Предузетник<br>Матични број 68177642<br>Датум оснивања/уписа у регистар 08.08.2025</p>
+        <p class="mt-5 text-white/70">MB: 68177612<br>PIB: 115200527</p>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-9 flex max-w-[1224px] items-center border-t border-white/15 px-5 pt-6 text-sm font-bold text-white/65 sm:px-8">
+      <i data-lucide="navigation" class="mr-2 h-4 w-4"></i>
+      Нови Сад
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

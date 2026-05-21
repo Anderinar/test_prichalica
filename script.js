@@ -1,80 +1,60 @@
-// Initialize Lucide icons
-lucide.createIcons();
-
-// --- Accordion Logic ---
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    const content = item.querySelector('.faq-content');
-    
-    trigger.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        
-        // Close all other items (optional, but requested for cleaner UI)
-        faqItems.forEach(otherItem => {
-            otherItem.classList.remove('active');
-            otherItem.querySelector('.faq-content').style.height = '0';
-        });
-        
-        if (!isActive) {
-            item.classList.add('active');
-            // Calculate the actual height of the content
-            const scrollHeight = content.scrollHeight;
-            content.style.height = scrollHeight + 'px';
-        }
-    });
-});
-
-// --- Lead Form Mock Submission ---
-const leadForm = document.getElementById('lead-form');
-
-if (leadForm) {
-    leadForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const btn = leadForm.querySelector('button');
-        const originalText = btn.innerHTML;
-        
-        btn.disabled = true;
-        btn.innerHTML = 'Отправка...';
-        
-        // Simulate a small delay for feedback
-        setTimeout(() => {
-            btn.innerHTML = 'Заявка отправлена!';
-            btn.classList.add('bg-green-600');
-            
-            // Clean up
-            leadForm.reset();
-            
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-green-600');
-            }, 3000);
-        }, 1500);
-    });
-}
-
-// --- Smooth Entrance Animation ---
 document.addEventListener('DOMContentLoaded', () => {
-    const heroH1 = document.querySelector('h1');
-    const heroP = document.querySelector('section.wavy-bg p');
-    const heroBtn = document.querySelector('section.wavy-bg button');
-    
-    if (heroH1) heroH1.classList.add('animate-up');
-    if (heroP) {
-        setTimeout(() => heroP.classList.add('animate-up'), 200);
-    }
-    if (heroBtn) {
-        setTimeout(() => heroBtn.classList.add('animate-up'), 400);
-    }
-});
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 
-// --- Placeholder for Mobile Menu (Simple Sidebar or Modal) ---
-const mobileBtn = document.getElementById('mobile-menu-btn');
-if (mobileBtn) {
-    mobileBtn.addEventListener('click', () => {
-        alert('Меню в разработке. Все разделы доступны в десктопной версии или футере.');
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
     });
-}
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-scroll]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const track = document.getElementById(button.dataset.scroll);
+      const direction = Number(button.dataset.direction || 1);
+
+      if (!track) return;
+
+      track.scrollBy({
+        left: direction * Math.min(420, track.clientWidth * 0.85),
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  document.querySelectorAll('.faq-question').forEach((button) => {
+    button.addEventListener('click', () => {
+      const currentItem = button.closest('.faq-item');
+
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        if (item !== currentItem) item.classList.remove('is-open');
+      });
+
+      currentItem.classList.toggle('is-open');
+    });
+  });
+
+  const leadForm = document.getElementById('leadForm');
+  const formStatus = document.getElementById('formStatus');
+
+  if (leadForm && formStatus) {
+    leadForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      formStatus.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
+      leadForm.reset();
+    });
+  }
+});
